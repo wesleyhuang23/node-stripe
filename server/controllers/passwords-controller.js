@@ -103,8 +103,8 @@ exports.postForgotPassword = function(req, res, next){
 
       var mailOptions = {
         to: user.email,
-        from: 'noreply@node-stripe-membership.herokuapp.com',
-        subject: 'Reset your password on node-stripe-membership.herokuapp.com',
+        from: 'noreply@tiburon-members.herokuapp.com',
+        subject: 'Reset your password on tiburon-members.herokuapp.com',
         text: 'You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +
@@ -198,8 +198,8 @@ exports.postToken = function(req, res, next){
 
       var mailOptions = {
         to: user.email,
-        from: 'noreply@node-stripe-membership.herokuapp.com',
-        subject: 'Your node-stripe-membership.herokuapp.com password has been changed',
+        from: 'noreply@tiburon-members.herokuapp.com',
+        subject: 'Your Tiburon Chamber Member password has been changed',
         text: 'Hello,\n\n' +
           'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
       };
