@@ -127,10 +127,11 @@ exports.postBilling = function(req, res, next){
 exports.postPlan = function(req, res, next){
   var plan = req.body.plan;
   var stripeToken = null;
+  console.log(req.body);
 
-  if(plan){
-    plan = plan.toLowerCase();
-  }
+  // if(plan){
+  //   plan = plan.toLowerCase();
+  // }
 
   if(req.user.stripe.plan == plan){
     req.flash('info', {msg: 'The selected plan is the same as the current plan.'});

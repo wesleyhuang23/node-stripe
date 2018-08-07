@@ -8,7 +8,7 @@
       <h1>Home <small>/views/dashboard/index</small></h1>
     </div>
     {% include "../partials/flash.html" %}
-    {% if user.stripe.plan == 'free' %}
+    {% if user.stripe.plan == 'plan_DNMMtov6dK8oSz' %}
     <div class="panel panel-default">
       <div class="panel-heading">Free Plan</div>
       <div class="panel-body">
@@ -21,42 +21,16 @@
     </div>
     {% endif %}
 
-    {% if user.stripe.plan == 'silver' %}
+    {% if user.stripe.plan == 'plan_DLViHOuVmYagkF' %}
     <div class="panel panel-default">
-      <div class="panel-heading">Silver Plan</div>
+      <div class="panel-heading">Member</div>
       <div class="panel-body">
-        <p>Thanks for subscribing to the silver plan!</p>
+        <p>Thank you for Being a Tiburon Member</p>
       </div>
     </div>
     {% else %}
     <div class="panel panel-default">
       <div class="panel-heading">Silver Plan (<a href="/billing">Change to this plan</a>)</div>
-    </div>
-    {% endif %}
-
-    {% if user.stripe.plan == 'gold' %}
-    <div class="panel panel-default">
-      <div class="panel-heading">Gold Plan</div>
-      <div class="panel-body">
-        <p>Thanks for subscribing to the gold plan!</p>
-      </div>
-    </div>
-    {% else %}
-    <div class="panel panel-default">
-      <div class="panel-heading">Gold Plan (<a href="/billing">Change to this plan</a>)</div>
-    </div>
-    {% endif %}
-
-    {% if user.stripe.plan == 'platinum' %}
-    <div class="panel panel-default">
-      <div class="panel-heading">Platinum Plan</div>
-      <div class="panel-body">
-        <p>Thanks for subscribing to the platinum plan!</p>
-      </div>
-    </div>
-    {% else %}
-    <div class="panel panel-default">
-      <div class="panel-heading">Platinum Plan (<a href="/billing">Change to this plan</a>)</div>
     </div>
     {% endif %}
 

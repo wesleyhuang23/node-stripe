@@ -60,6 +60,7 @@ var knownEvents = {
     res.status(200).end();
   },
   'customer.updated': function(req, res, next) {
+    console.log(req.stripeEvent)
     console.log(req.stripeEvent.type + ': event processed');
     res.status(200).end();
   },
