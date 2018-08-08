@@ -25,6 +25,7 @@ exports.getSignup = function(req, res){
 };
 
 exports.postSignup = function(req, res, next){
+  console.log(req.body);
   req.assert('email', 'Please sign up with a valid email.').isEmail();
   req.assert('password', 'Password must be at least 6 characters long').len(6);
 
