@@ -25,7 +25,7 @@ exports.getSignup = function(req, res){
 };
 
 exports.postSignup = function(req, res, next){
-  console.log(req.body);
+  console.log(req);
   req.assert('email', 'Please sign up with a valid email.').isEmail();
   req.assert('password', 'Password must be at least 6 characters long').len(6);
 
@@ -40,8 +40,8 @@ exports.postSignup = function(req, res, next){
   }
   // calls next middleware to authenticate with passport
   passport.authenticate('signup', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/signup',
+    successRedirect: req.headers.origin,
+    failureRedirect: req.headers.origin + '#error',
     failureFlash : true
   })(req, res, next);
 };

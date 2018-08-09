@@ -47,6 +47,7 @@ module.exports = function(passport){
       passReqToCallback : true
     },
     function(req, email, password, done) {
+      console.log(req);
       var findOrCreateUser = function(){
         User.findOne({ email: req.body.email }, function(err, existingUser) {
           if (existingUser) {
